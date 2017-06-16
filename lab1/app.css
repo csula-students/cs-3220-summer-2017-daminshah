@@ -1,0 +1,236 @@
+.container {
+	//margin: 0 auto;
+	width: 78em;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Lobster', Georgia, Times, serif;
+	font-size: 70px;
+	line-height: 50px;
+	color: black;
+}
+
+body {
+	background-color: burlywood;
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 25px;
+}
+
+nav {
+	float: right;
+	position: relative;
+	overflow: hidden;
+	background-color: #333;
+	margin: 0px;
+	padding: 0px;
+}
+
+nav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav a:hover {
+	background-color: #26a69a;
+}
+
+.logo {
+	float: left;
+	height: 5em;
+}
+
+.button1 {
+	font-size: 16px;
+	padding: 0.5em 1em;
+	border-radius: 3px;
+	color: white;
+	border: none;
+	margin: 0.5em 1em;
+}
+
+.button1 {
+	background-color:black;
+}
+
+.button1:hover {
+	background-color:whitesmoke;
+	color: black;
+}
+
+table {
+	border: width border-style silver;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+tr {
+	border-bottom: 1px solid #ccc;
+}
+
+th {
+	line-height: 2em;
+	text-align: left;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
+	line-height: 2em;
+	align-items: left;
+	width: 50px;
+}
+
+th, td {
+	padding: 1em;
+}
+
+tbody > tr:hover {
+	background-color: #ededed;
+}
+
+
+
+.burger {
+	height: 5em;
+}
+
+img {
+	vertical-align: middle;
+}
+
+div.item1 {
+	float: left;
+	border-style: solid;
+	border-width: thin;
+	border-color: silver;
+	width: 33%;
+	padding: 1px;
+	text-align: center;
+	background-color: blanchedalmond;
+}
+
+div.item2 {
+	float: left;
+	border-style: solid;
+	border-width: thin;
+	border-color: silver;
+	width: 33%;
+	padding: 1px;
+	text-align: center;
+	background-color: blanchedalmond;
+	margin-left: 1em;
+	
+}
+div.item3 {
+	float: left;
+	clear: right;
+	border-style: solid;
+	border-width: thin;
+	border-color: silver;
+	width: 31%;
+	padding: 1px;
+	text-align: center;
+	background-color: blanchedalmond;
+	margin-left: 1em;
+	
+}
+img.item2 {
+	height: 100px;
+	padding: 1em;
+}
+
+img.item1 {
+	height: 100px;
+	padding: 1em;
+}
+
+img.item3 {
+	height: 100px;
+	padding: 1em;
+}
+@media screen and (max-width: 320px) {
+	/* comes into effect for screens less than or equal to 320 pixels */
+	body {
+		width: 120px;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+	body {
+		width: 320px;
+	}
+	
+}
+.checkboxFive{
+	width: 25px;
+	margin: 20px 45px;
+	position: relative;
+	clear: right;
+}
+
+.checkboxFive label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 0;
+  	left: 0;
+	background: #eee;
+	border:1px solid #ddd;
+
+}
+
+.checkboxFive label::after{
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 6px;
+	left: 7px;
+	border: 3px solid #333;
+	border-top: none;
+	border-right: none;
+
+	transform: rotate(-45deg);
+}
+
+.checkboxFive label:hover::after{
+	opacity: 0.5;
+}
+
+.checkboxFive input[type=checkbox]:checked + label:after{
+	opacity: 1;
+}
+
+.footer {
+float: left;
+margin-top: 100px;   /* Height of the footer */
+   
+	
+}
+input:checked{
+	height: 100px;
+	width: 100px;
+}
+
+
+
+
+
+
+/* .squaredTwo */
