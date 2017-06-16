@@ -62,11 +62,11 @@ nav a:hover {
 }
 
 .button1 {
-	background-color:black;
+	background-color: black;
 }
 
 .button1:hover {
-	background-color:whitesmoke;
+	background-color: whitesmoke;
 	color: black;
 }
 
@@ -101,8 +101,6 @@ tbody > tr:hover {
 	background-color: #ededed;
 }
 
-
-
 .burger {
 	height: 5em;
 }
@@ -132,8 +130,8 @@ div.item2 {
 	text-align: center;
 	background-color: blanchedalmond;
 	margin-left: 1em;
-	
 }
+
 div.item3 {
 	float: left;
 	clear: right;
@@ -145,8 +143,8 @@ div.item3 {
 	text-align: center;
 	background-color: blanchedalmond;
 	margin-left: 1em;
-	
 }
+
 img.item2 {
 	height: 100px;
 	padding: 1em;
@@ -161,6 +159,7 @@ img.item3 {
 	height: 100px;
 	padding: 1em;
 }
+
 @media screen and (max-width: 320px) {
 	/* comes into effect for screens less than or equal to 320 pixels */
 	body {
@@ -172,9 +171,9 @@ img.item3 {
 	body {
 		width: 320px;
 	}
-	
 }
-.checkboxFive{
+
+.checkboxFive {
 	width: 25px;
 	margin: 20px 45px;
 	position: relative;
@@ -187,13 +186,12 @@ img.item3 {
 	width: 25px;
 	height: 25px;
 	top: 0;
-  	left: 0;
+	left: 0;
 	background: #eee;
-	border:1px solid #ddd;
-
+	border: 1px solid #ddd;
 }
 
-.checkboxFive label::after{
+.checkboxFive label::after {
 	opacity: 0.2;
 	content: '';
 	position: absolute;
@@ -205,32 +203,24 @@ img.item3 {
 	border: 3px solid #333;
 	border-top: none;
 	border-right: none;
-
 	transform: rotate(-45deg);
 }
 
-.checkboxFive label:hover::after{
+.checkboxFive label:hover::after {
 	opacity: 0.5;
 }
 
-.checkboxFive input[type=checkbox]:checked + label:after{
+.checkboxFive input[type=checkbox]:checked + label:after {
 	opacity: 1;
 }
 
 .footer {
-float: left;
-margin-top: 100px;   /* Height of the footer */
-   
-	
+	float: left;
+	margin-top: 100px;
+	/* Height of the footer */
 }
-input:checked{
+
+input:checked {
 	height: 100px;
 	width: 100px;
 }
-
-
-
-
-
-
-/* .squaredTwo */
