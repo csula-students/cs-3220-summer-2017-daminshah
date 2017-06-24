@@ -1,110 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="App.js"></script>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" shrink-to-fit=no" />
 </head>
+
 <body>
-	<h1></h1>
-	
+    <header class="clearfix">
+        <nav>
+            <a href="menu.html">Menu</a>
+
+            <a href="order.html">Orders</a>
+
+            <a href="index.html">Status</a>
+
+        </nav>
+        <img src="https://images.pexels.com/photos/2059/restaurant-red-beans-coffee.jpg?h=350&auto=compress&cs=tinysrgb" class="logo"
+            alt="">
+        <h1>DAMIN'S CAFE</h1>
+
+
+    </header>
+    <main>
+        <div class="container">
+            <h3>Order Statuses</h3>
+            <table class="status-table">
+                <thead>
+                    <tr>
+                        <th>Created</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody="status">
+                    <!--<tr>
+                        <td>June 9 12:00pm</td>
+                        <td><img src="http://thedeliciousrevolution.com/wp-content/uploads/2009/09/Spinach-Burgers-615x411.jpg"
+                                style="background-color:blanchedalmond" class="burger" alt=""><br>Spinach Burger</td>
+                        <td>Elisa</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <td>June 9 1:00pm</td>
+                        <td><img src="http://www.cicis.com/media/1176/pizza_trad_pepperonibeef.png" class="burger" alt=""><br>Pizza</td>
+                        <td>Amy</td>
+                        <td>Delivered</td>
+                    </tr>
+                    <tr>
+                        <td>June 9 1:30pm</td>
+                        <td><img src="http://dolcecarini.com/wp-content/uploads/2014/07/Cheeseburger.jpg" class="burger" alt=""><br>HamBurger</td>
+                        <td>Jill</td>
+                        <td>In Progress</td>
+                    </tr>-->
+
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+    </main>
 
 </body>
-<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Picture</th>
-			<th>Ingredients</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Chicken Puffs</td>
-			<td><img class="puffs" src="http://images.media-allrecipes.com/userphotos/720x405/1400328.jpg"></td>
-			<td>2 eggs, beaten 1/2 cup white sugar 1 large onion, diced
-				Onions Red 1 cup self-rising flour 1 cup self-rising cornmeal 1 quart oil for frying
-			</td>
-
-		</tr>
-
-		<tr>
-			<td>Spinach Artichoke Dip</td>
-			<td><img class="artichoke" src="http://images.media-allrecipes.com/userphotos/720x405/4415287.jpg"></td>
-			<td>Cooking spray 1 (8 ounce) package light cream cheese, softened 1 (3 ounce) package light cream cheese, softened 1/2 cup light mayonnaise 1 (14 ounce) can artichoke hearts, drained and chopped 12 ounces pico de gallo 1 (10 ounce) package frozen chopped spinach, thawed and drained 1/2 cup grated Parmesan cheese 1/2 cup grated Romano cheese 1 tablespoon chopped garlic</td>
-
-		</tr>
-		<tr>
-			<td>Ice Cream Cake</td>
-			<td><img class="cream " src="http://images.media-allrecipes.com/userphotos/250x250/658582.jpg"></td>
-			<td>16 ice cream sandwiches 1 (16 ounce) container frozen non-dairy whipped topping 1 (12 ounce) jar chocolate fudge topping, room temperature 1 (1.5 ounce) bar chocolate candy bar, grated</td>
-
-		</tr>
-
-	</tbody>
-</table>
-
-
-<div> CREATE YOUR OWN
-<form action="">
-	<label for="name" > Add Name</label>
-	<input type="text" name="">
-	<label for="image" >Add Image</label>
-	<input type="text" name="">
-	<label for="ingredients" >Add all Ingredients</label>
-	<input type="text" name="">
-	<button> Submit</button>
-
-</div>	
-</form>
-
-
-<style type="text/css">
-	button {
-	color: #ccc;
-	background-color: #009688;
-	font-size: 16px;
-	padding: 0.5em 1em;
-}
-
-img.artichoke {
-
-	width: 250px;
-	padding: 8px;
-
-}
-img.cream {
-	height:;
-		padding: 8px;
-}
-img.puffs {
-	height: 200px;
-	width: 250px;
-		padding: 8px;
-}
-th {
-	 background-color:#d4e3e5;
-	 padding: 8px;
-	 font-style: ;
-	 font-size: 24px;
-}
-
-td {
-	font-style: italic;
-}
-
-table{
-	border: 1px solid #red;
-
-}
-tr{
-	background-color: #ccc;
-	
-}
-
-label{
-	display: block;
-	color: #333333;
-font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
-}
-</style>
-</html>
+<footer class="footer">
+    Copyright © 2012-2017. All rights reserved.
+</footer>
