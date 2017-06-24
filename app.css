@@ -70,6 +70,24 @@ nav a:hover {
 	color: black;
 }
 
+.delete-button {
+	font-size: 16px;
+	padding: 0.5em 1em;
+	border-radius: 3px;
+	color: white;
+	border: none;
+	margin: 0.5em 1em;
+}
+
+.delete-button {
+	background-color: black;
+}
+
+.delete-button:hover {
+	background-color: whitesmoke;
+	color: black;
+}
+
 table {
 	border: width border-style silver;
 	width: 100%;

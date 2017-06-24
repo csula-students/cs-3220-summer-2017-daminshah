@@ -54,7 +54,7 @@ class Cart {
 
     destroy() {
         // TODO: remove all the events attached from init
-        tbody.innerHTML = '';
+     //   tbody.innerHTML = ``;
     }
 
     // remove an item from shopping cart
@@ -63,8 +63,11 @@ class Cart {
         // call render method when the item is removed to update view
         //Tried Using Splice but failed REPEATEDLY!!!
         var fill = this.items;
-        fill = fill.filter(a => a != fill[item]);
+        fill = fill.filter(a => a !== fill[item]); 
         this.store.cartItems = fill;
+    
+        console.log(this.store.cartItems);
+        location.reload(false);
         this.render();
     }
 
@@ -77,15 +80,18 @@ class Cart {
         console.log(this.store.cartItems);
         let tbody = this.root.querySelector('tbody');
         // using innerHTML to render a list of table row item under tbody
+        
+        
         var dataset = this.store.cartItems;
 
-
+            tbody.innerHTML=``;
         for (var i = 0; i < dataset.length; i++) {
+        
             tbody.innerHTML += `<tr class="item">
             <td>${dataset[i].name}</td>
             <td>${dataset[i].price}</td>
             <td img src=${dataset[i].img}>${dataset[i].name}</td>
-            <td><button class="delete-button" data-index=${i} >Remove</button></td>
+            <td><button class="delete-button" data-index="${i}" >Remove</button></td>
         <tr>`
         }
 
