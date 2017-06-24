@@ -54,6 +54,7 @@ class Cart {
 
     destroy() {
         // TODO: remove all the events attached from init
+        tbody.innerHTML = '';
     }
 
     // remove an item from shopping cart
@@ -63,8 +64,6 @@ class Cart {
         //Tried Using Splice but failed REPEATEDLY!!!
         var fill = this.items;
         fill = fill.filter(a => a != fill[item]);
-        console.log(fill);
-
         this.store.cartItems = fill;
         this.render();
     }
@@ -170,16 +169,7 @@ class StatusTable {
         // using innerHTML to render a list of table row item under tbody
         var dataset = this.store.cartItems;
 
-  var tbodyText = '';
-            for (var i = 0; i < dataset.length; i++) {
-                tbodyText = tbodyText + `<tr class="item">
-                <td>${dataset[i].created}</td>
-                <td>${dataset[i].name}</td>
-                <td>${dataset[i].price}</td>
-                <td>${dataset[i].status}</td>
-            <tr>`;
-            }
-            tbody.innerHTML = tbodyText;
+  
 
         }
 
@@ -193,7 +183,7 @@ class StatusTable {
 // the end of document
 document.addEventListener('DOMContentLoaded', () => {
     // use querySelector to find the table element (preferably by id selector)
-    // let statusTable = document.querySelector('');
+    let statusTable = document.querySelector('.status-table');
     // use querySelector to find the cart element (preferably by id selector)
     let cart = document.querySelector('.cart-table');
     let checkoutButtons = document.querySelectorAll('.button1');
