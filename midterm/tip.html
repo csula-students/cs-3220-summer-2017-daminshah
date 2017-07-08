@@ -1,43 +1,41 @@
-<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Tip Calculator</title>
-<!--<link href="app.css" rel="stylesheet" type="text/css">-->
-</head>
-
-<body>
-<div class="container">
-   
-        <h1>Tip Calculator</h1>
-    
-    <form id="tipcalc">
-        Bill: <input type="text" name="bill" id="bill">
-
-
-        &nbsp &nbsp &nbsp &nbsp
-        
-        
-         Tip: <span id="tip"></span>
-         <br>
-        Tip(%): <input type="text" name="tip" id="per"> 
-
-          &nbsp &nbsp &nbsp     
-
-           Total: <span id="total"></span>
-           <br>
-           <button id="calculate">Calculate</button>
+       <meta charset="UTF-8">
        
-        <br>
+      
      
-    </form>
-</div>
-<script src="tip.js">
-    // function calc() {
-    //     var bill = document.getElementById('bill').value;
-    //     var tip = bill * .15;
-    //     var total = bill + tip;
+       <title>Tip Calculator</title>
+</head>
+<body>
 
-    //     document.getElementById("tip").innerHTML= "$"+(tip).toFixed(2);
-    //     document.getElementById("total").innerHTML= "$"+(total).toFixed(2);         
-    // }
-</script>
+
+<table border=2>
+<tr>
+<th>
+<h1>Tip Calculator</h1></th>
+<tr>
+<td>
+<label for="bill">Bill Amount:</label><br>
+<input type="text" id="bill" name="bill"><br>
+<label for="percentage">Tip %:</label><br>
+<input type="text" id="percentage" name="percentage"><br>
+</td>
+<td>
+ 
+<label for="tip">Tip:</label>
+<input type="text" id="tip" ><br>
+ 
+<label for="total">Total amount:</label>
+<input type="text" id="total" ><br>
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" id="calculate" value="calculate" > 
+<td>
+    </tr>
+    </table>
+
+<script src="tip.js"></script>
 </body>
+</html>

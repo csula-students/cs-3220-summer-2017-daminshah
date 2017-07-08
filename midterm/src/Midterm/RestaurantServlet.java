@@ -1,8 +1,7 @@
-
+package Midterm;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CreateGuestBookServlet
+ * Servlet implementation class RandomRestaurantServlet
  */
-@WebServlet("/CreateGuestBookServlet")
-public class CreateGuestBookServlet extends HttpServlet {
+@WebServlet("/RestaurantServlet")
+public class RestaurantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreateGuestBookServlet() {
+    public RestaurantServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +30,20 @@ public class CreateGuestBookServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-		out.println("<form method=\"post\">");
-		out.println("Your Name: <input type='text' name='name'/> </br>");
-		out.println("<textarea name='comment'></textarea> </br> ");
-		out.println("<button>Add</button>");
+		
+		out.println("<head>");
+		out.println("<h1>Random Restaurant Picker</h1>");
+		out.println("</head>");	
+		out.println("<form method=\"get\">");
+		
+		out.println("<h2>What's for Lunch ? </h2>");
+		
+		out.println("<a href='RandomRestaurantServlet'> Feeling Lucky!! </a> </br>");
+		
+		out.println("<a href='SeeList'> Check List!! </a>");
 		out.println("</form>");
+		
 	}
 
 	/**
@@ -46,13 +52,6 @@ public class CreateGuestBookServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		List<GuestBookEntry> entries=(List<GuestBookEntry>) getServletContext().getAttribute("entries");
-		entries.add(new GuestBookEntry(request.getParameter("name"), request.getParameter("comment"), entries.size()));
-		PrintWriter out=response.getWriter();
-		
-		out.println("<a href=guestbook> Go back to Guestbook </a>");
-		//System.out.println(request.getParameter("name"));
-		//System.out.println(request.getParameter("comment"));
 	}
 
 }
