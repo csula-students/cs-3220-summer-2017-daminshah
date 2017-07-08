@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="../app.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" shrink-to-fit="no ">
+</head>
+
+<body>
+    <header class="clearfix ">
+        <nav>
+            <a href="../menu.html">Menu</a>
+
+            <a href="create-food.html ">Create Food Item</a>
+
+            <a href="inventory.html ">Inventory</a>
+
+        </nav>
+        <img src="https://images.pexels.com/photos/2059/restaurant-red-beans-coffee.jpg?h=350&auto=compress&cs=tinysrgb
+        " class="logo " alt=" ">
+        <h1>DAMIN'S CAFE-Admin</h1>
+
+
+    </header>
+    <main>
+        <h2>Create a new Item</h2>
+
+        <form id="create_food_form">
+            <fieldset>
+                <legend>
+                    <h2>Food Information</h2>
+                </legend>
+                <table>
+                    <tr>
+                        <td>
+                            <h3>Food Name</h3>
+                            <input type="text" name="name" id="item_name"></input>
+                            <br><br>
+                            <h3>Image Link</h3>
+                            <input type="text" name="image" id="item_image"></input>
+                            <br><br>
+                            <h3>Food Description</h3>
+                            <textarea id="item_description" name="description"></textarea>
+                            <h3>Food Price</h3>
+                            <input id="item_price" name="price"></input>
+                        </td>
+                        <!--<td>
+                            <h3>Ingredients</h3>
+                            <input type='text' id = 'ingredient' />
+                            <!--<input type='button'class="button1" value = 'Add Ingredient' id = 'add'>
+                            <button id="create_ingredient_button"   type="button">Add</button>
+                            <ul id="ingredientlist">
+                            <li>
+                                Ingredients
+
+                            </li>
+                            </ul>
+                        </td>-->
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <button id="create_food_button" button class="button1" type="button">Add this</button>
+
+                        </td>
+
+
+
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+</body>
+<script src="../App.js"></script>
+<footer class="footer ">
+    Copyright © 2012-2017. All rights reserved.
+</footer>
