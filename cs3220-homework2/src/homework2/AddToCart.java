@@ -54,10 +54,7 @@ public class AddToCart extends HttpServlet {
 			leentry.getPrice()));
 		System.out.println(leentry.getName());
 
-//		cartentry.add(new Addfood(id, leentry.getName(), leentry.getDescription(), leentry.getImgurl(), leentry.getPrice()));
-//		
-//		System.out.println(leentry.getName());
-//
+
 		getServletContext().setAttribute("cartentry", cartentry);
 		
 response.setContentType("text/html");

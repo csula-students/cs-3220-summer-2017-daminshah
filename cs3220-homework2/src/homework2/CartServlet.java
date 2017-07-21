@@ -3,6 +3,7 @@ package homework2;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -64,18 +65,7 @@ public class CartServlet extends HttpServlet {
 
 		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
 
-		if (cartentry.size() == 0) {
-			out.println("<table>" + "<tbody>" + "<tr>" + "<td>");
-
-			out.println("Your cart is empty. <br>");
-			out.println("Click <a href=\"menu\">Menu</a> to order our nice foods !");
-
-			out.println("</td>" + "</tr>" + "<tbody>" + "</table>");
-
-		}
-
-		else {
-			out.println("<table>");
+			out.println("<table border=2>");
 			out.println("<thead>" + "<tr>"  + "<th>" + "Name" + "</th>" + "<th>"
 					+ " Description" + "</th>" + "<th>" + "Image" + "</th>" + "<th>" + "Price" + "</th>"
 					+ "<th>" + " Remove" + "</th>" + "</tr>" + "<thead>");
@@ -92,15 +82,15 @@ public class CartServlet extends HttpServlet {
 
 			out.println("</table>");
 
-			out.println("<h3> Type Your Name </h3>");
+			out.println("<h3> Enter your Name </h3>");
 
 			out.println("<form method=\"post\">");
 			out.println("<label>Your Name:</label><br>");
 			out.println("<input name='name' type='text'/></br><br>");
-			out.println("<button>Confirm Your order</button>");
+			out.println("<button>Confirm order</button>");
 			out.println("</form>");
 
-		}
+		
 
 		
 		out.println("</body>");
@@ -115,6 +105,32 @@ public class CartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 //		ORDER FUNCTIONALITY REMAINING
+		
+		List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
+		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+
+		
+	
+		for (Addfood entry : cartentry) {
+
+			
+			orderitems.add(new Order(orderitems.size(), entry, request.getParameter("name"), Order.Statuses.IN_QUEUE , new Date()));
+			getServletContext().setAttribute("orderitems", orderitems);
+			
+			System.out.println(entry.getName());
+		}
+
+		cartentry.clear();
+		PrintWriter out = response.getWriter();
+
+		response.setContentType("text/html");
+			
+		out.println("<title> Shopping Cart </title>");
+		out.println("<h2>Thank you for your order !</h2>");
+		out.println("<a href='http://localhost:8080/cs3220-homework2/orders'> Go to Orders Page </a>");
+		
+		
+		
 	}
 	}
 

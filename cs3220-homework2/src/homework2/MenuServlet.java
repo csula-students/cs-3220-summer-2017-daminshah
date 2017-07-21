@@ -41,18 +41,25 @@ public class MenuServlet extends HttpServlet {
 		out.println("<style>body { " + "}</style>");
 		out.println("</head>");
 		out.println("<h1> DAMIN'S CAFE</h1>");
-		
-		out.println("<table border='2'>");
-		out.println("<tr><th>Food Name</th><th>Price</th><th>Description</th><th>Image</th><th>Add in a Cart</th></tr>");
 		out.println("<body style='background-color: burlywood;'>");
 		out.println("<img  src=https://images.pexels.com/photos/2059/restaurant-red-beans-coffee.jpg?h=350&auto=compress&cs=tinysrgb width=70px alt= logo /> </br>");
-		for (Addfood entries : entry) {
+	
+		
+		out.println("<table border='2'>");
+		out.println("<tr>"
+				+ "<th> Name</th>"
+				+ "<th>Price</th>"
+				+ "<th>Description</th>"
+				+ "<th>Image</th>"
+				+ "<th>Add to Cart</th>"
+				+ "</tr>");
+			for (Addfood entries : entry) {
 			out.println("<tr>"  
 					+"<td>" + entries.getName() + "  </td>" 
 					+ "<td>"+ entries.getPrice() + " </td>" 
 					+ "<td>"+ entries.getDescription() + " </td>" 
-					+ "<td><img src='"+entries.getImgurl()+"'height='60' width='60'>"+"'</td >"
-					+"<td><a href='http://localhost:8080/cs3220-homework2/menu/add?id="+entries.getId()+"'>Add in the cart</a></td>"
+					+ "<td>" +"<img src= "+entries.getImgurl()+" width=70px > </td>" 
+					+"<td><a href='http://localhost:8080/cs3220-homework2/menu/add?id="+entries.getId()+"'>Add To cart</a></td>"
 					
 		+"</tr>"
 
