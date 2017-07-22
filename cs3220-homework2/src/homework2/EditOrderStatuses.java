@@ -35,10 +35,10 @@ public class EditOrderStatuses extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
+		List<Order> Homework2orderitems = (List<Order>) getServletContext().getAttribute("Homework2orderitems");
 		Order leEntry = null;
 
-		for (Order order : orderitems) {
+		for (Order order : Homework2orderitems) {
 			if (order.getId() == id) {
 				leEntry = order;
 			}
@@ -64,12 +64,12 @@ public class EditOrderStatuses extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		int id = Integer.parseInt(request.getParameter("id"));
-		List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
+		List<Order> Homework2orderitems = (List<Order>) getServletContext().getAttribute("Homework2orderitems");
 		Order leEntry = null;
 		int index = -1;
-		for (int i = 0; i < orderitems.size(); i++) {
-			if (orderitems.get(i).getId() == id) {
-				leEntry = orderitems.get(i);
+		for (int i = 0; i < Homework2orderitems.size(); i++) {
+			if (Homework2orderitems.get(i).getId() == id) {
+				leEntry = Homework2orderitems.get(i);
 				index = i;
 			}
 			
@@ -80,8 +80,8 @@ public class EditOrderStatuses extends HttpServlet {
 
 		System.out.println(status);
 
-		orderitems.set(index, new Order(leEntry.getId(), leEntry.getFood(), leEntry.getName(), status2,leEntry.getDate()));
-		getServletContext().setAttribute("orderitems", orderitems);
+		Homework2orderitems.set(index, new Order(leEntry.getId(), leEntry.getFood(), leEntry.getName(), status2,leEntry.getDate()));
+		getServletContext().setAttribute("orderitems", Homework2orderitems);
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();

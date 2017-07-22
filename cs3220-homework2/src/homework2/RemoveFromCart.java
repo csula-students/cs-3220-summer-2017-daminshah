@@ -33,15 +33,15 @@ public class RemoveFromCart extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Addfood> Homework2cartentry = (List<Addfood>) getServletContext().getAttribute("Homework2cartentry");
 		int index = -1;
-		for (int i = 0; i < cartentry.size(); i++) {
-			if (cartentry.get(i).getId() == id) {
+		for (int i = 0; i < Homework2cartentry.size(); i++) {
+			if (Homework2cartentry.get(i).getId() == id) {
 				index = i;
 			}
 		}
-		cartentry.remove(index);
-		getServletContext().setAttribute("cartentry", cartentry);
+		Homework2cartentry.remove(index);
+		getServletContext().setAttribute("Homework2cartentry", Homework2cartentry);
 
 		
 		PrintWriter out = response.getWriter();
@@ -49,7 +49,6 @@ public class RemoveFromCart extends HttpServlet {
 		response.setContentType("text/html");
 			out.println("<title>Remove Item</title>");
 		out.println("<h2>Your item is removed</h2>");
-//		out.println("<button onclick=\"location.href='../shopping-cart'\">Go back to Shopping Cart</button>");
 		out.println("<a href='http://localhost:8080/cs3220-homework2/shopping-cart'>Go to the main menu</a>");
 
 	}

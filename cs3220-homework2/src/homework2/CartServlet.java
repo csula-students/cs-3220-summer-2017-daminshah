@@ -28,8 +28,8 @@ public class CartServlet extends HttpServlet {
     }
     
     public void init() {
-		List<Addfood> cartentry = new ArrayList<>();
-		getServletContext().setAttribute("cartentry", cartentry);
+		List<Addfood> Homework2cartentry = new ArrayList<>();
+		getServletContext().setAttribute("Homework2cartentry", Homework2cartentry);
 
 	}
 
@@ -41,7 +41,7 @@ public class CartServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		//int id = Integer.parseInt(request.getParameter("id"));
 		PrintWriter out = response.getWriter();
-		List<Addfood> foodentry = (List<Addfood>) getServletContext().getAttribute("foodentry");
+		List<Addfood> Homework2foodentry = (List<Addfood>) getServletContext().getAttribute("Homework2foodentry");
 
 		response.setContentType("text/html");
 		
@@ -63,14 +63,14 @@ public class CartServlet extends HttpServlet {
 
 		out.println("<h2> Shopping Cart </h2>");
 
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Addfood> Homework2cartentry = (List<Addfood>) getServletContext().getAttribute("Homework2cartentry");
 
 			out.println("<table border=2>");
 			out.println("<thead>" + "<tr>"  + "<th>" + "Name" + "</th>" + "<th>"
 					+ " Description" + "</th>" + "<th>" + "Image" + "</th>" + "<th>" + "Price" + "</th>"
 					+ "<th>" + " Remove" + "</th>" + "</tr>" + "<thead>");
 
-			for (Addfood entries : cartentry) {
+			for (Addfood entries : Homework2cartentry) {
 
 				out.println("<tbody>" + "<tr>"  + "<td>" + entries.getName() + "</td>"
 						+ "<td>" + entries.getDescription() + "</td>" + "<td><img src=" + "\"" + entries.getImgurl() + "\""
@@ -106,21 +106,21 @@ public class CartServlet extends HttpServlet {
 		doGet(request, response);
 //		ORDER FUNCTIONALITY REMAINING
 		
-		List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Order> Homework2orderitems = (List<Order>) getServletContext().getAttribute("Homework2orderitems");
+		List<Addfood> Homework2cartentry = (List<Addfood>) getServletContext().getAttribute("Homework2cartentry");
 
 		
 	
-		for (Addfood entry : cartentry) {
+		for (Addfood entry : Homework2cartentry) {
 
 			
-			orderitems.add(new Order(orderitems.size(), entry, request.getParameter("name"), Order.Statuses.IN_QUEUE , new Date()));
-			getServletContext().setAttribute("orderitems", orderitems);
+			Homework2orderitems.add(new Order(Homework2orderitems.size(), entry, request.getParameter("name"), Order.Statuses.IN_QUEUE , new Date()));
+			getServletContext().setAttribute("orderitems", Homework2orderitems);
 			
 			System.out.println(entry.getName());
 		}
 
-		cartentry.clear();
+		Homework2cartentry.clear();
 		PrintWriter out = response.getWriter();
 
 		response.setContentType("text/html");

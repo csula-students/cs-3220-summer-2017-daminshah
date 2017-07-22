@@ -33,7 +33,7 @@ public class MenuServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		PrintWriter out = response.getWriter();
-		List<Addfood> entry = (List<Addfood>) getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry = (List<Addfood>) getServletContext().getAttribute("Homework2entry");
 		
 		response.setContentType("text/html");
 
@@ -53,7 +53,7 @@ public class MenuServlet extends HttpServlet {
 				+ "<th>Image</th>"
 				+ "<th>Add to Cart</th>"
 				+ "</tr>");
-			for (Addfood entries : entry) {
+			for (Addfood entries :Homework2entry) {
 			out.println("<tr>"  
 					+"<td>" + entries.getName() + "  </td>" 
 					+ "<td>"+ entries.getPrice() + " </td>" 

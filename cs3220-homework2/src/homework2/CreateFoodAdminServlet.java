@@ -61,12 +61,12 @@ public class CreateFoodAdminServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		List<Addfood> entry=(List<Addfood>) getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry=(List<Addfood>) getServletContext().getAttribute("Homework2entry");
 		//List<FoodItems> items=new ArrayList<>();
-		entry.add(new Addfood(entry.size(), request.getParameter("foodname"), request.getParameter("description"), request.getParameter("imgurl"),
+		Homework2entry.add(new Addfood(Homework2entry.size(), request.getParameter("foodname"), request.getParameter("description"), request.getParameter("imgurl"),
 				Integer.parseInt(request.getParameter("price"))));
 				
-				getServletContext().setAttribute("entry", entry);
+				getServletContext().setAttribute("Homework2entry", Homework2entry);
 		
 		PrintWriter out = response.getWriter();
 		out.println("<a href='http://localhost:8080/cs3220-homework2/admin/foods'> Check FoodItems List</a>");

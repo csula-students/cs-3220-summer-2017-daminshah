@@ -28,8 +28,8 @@ public class OrderStatusServlet extends HttpServlet {
     
     public void init() {
 
-		List<Order> orderitems = new ArrayList<>();
-		getServletContext().setAttribute("orderitems", orderitems);
+		List<Order> Homework2orderitems = new ArrayList<>();
+		getServletContext().setAttribute("Homework2orderitems", Homework2orderitems);
 
 	}
 
@@ -41,7 +41,7 @@ public class OrderStatusServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Addfood> Homework2cartentry = (List<Addfood>) getServletContext().getAttribute("Homework2cartentry");
 			
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
@@ -61,9 +61,9 @@ public class OrderStatusServlet extends HttpServlet {
 
 		out.println("<h2> Order Statuses </h2>");
 
-		List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
+		List<Order> Homework2orderitems = (List<Order>) getServletContext().getAttribute("Homework2orderitems");
 
-		if (orderitems.size() == 0) {
+		if (Homework2orderitems.size() == 0) {
 			out.println("<table>" + "<tbody>" + "<tr>" + "<td>");
 
 			out.println("You do not have any order. <br>");
@@ -82,7 +82,7 @@ public class OrderStatusServlet extends HttpServlet {
 							+ "<th>" + " Date " + 
 							"</th>" + "</tr>" + "<thead>");
 
-			for (Order orders : orderitems)
+			for (Order orders : Homework2orderitems)
 
 				out.println("<tbody>" 
 							+ "<tr>" +

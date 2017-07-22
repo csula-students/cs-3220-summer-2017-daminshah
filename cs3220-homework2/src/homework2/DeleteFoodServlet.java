@@ -34,16 +34,16 @@ public class DeleteFoodServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		int id=Integer.parseInt(request.getParameter("id"));
-		List<Addfood> entry=(List<Addfood>)getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry=(List<Addfood>)getServletContext().getAttribute("Homework2entry");
 		
 		int index=-1;
-		for (int i = 0; i < entry.size(); i ++) {
-			if (entry.get(i).getId() == id) {
+		for (int i = 0; i < Homework2entry.size(); i ++) {
+			if (Homework2entry.get(i).getId() == id) {
 				index = i;
 			}
 		}
-		entry.remove(index);
-		getServletContext().setAttribute("entry", entry);
+		Homework2entry.remove(index);
+		getServletContext().setAttribute("Homework2entry", Homework2entry);
 		
 
 		response.setContentType("text/html");

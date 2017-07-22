@@ -33,9 +33,9 @@ public class EditFoodAdminServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		int id=Integer.parseInt(request.getParameter("id"));
 		@SuppressWarnings("unchecked")
-		List<Addfood> entry=(List<Addfood>) getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry=(List<Addfood>) getServletContext().getAttribute("Homework2entry");
 		Addfood leEntry=null;
-		for(Addfood entries:entry){
+		for(Addfood entries:Homework2entry){
 			if(entries.getId()==id){
 				leEntry=entries;
 			}
@@ -70,23 +70,23 @@ public class EditFoodAdminServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		int id = Integer.parseInt(request.getParameter("id"));
-		List<Addfood> entry = (List<Addfood>) getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry = (List<Addfood>) getServletContext().getAttribute("Homework2entry");
 		Addfood leEntry = null;
 		int index = -1;
-		for (int i = 0; i < entry.size(); i ++) {
-			if (entry.get(i).getId() == id) {
-				leEntry = entry.get(i);
+		for (int i = 0; i < Homework2entry.size(); i ++) {
+			if ( Homework2entry.get(i).getId() == id) {
+				leEntry = Homework2entry.get(i);
 				index = i;
 			}
 		}
-		entry.set(index, new Addfood(
+		Homework2entry.set(index, new Addfood(
 			leEntry.getId(),
 			request.getParameter("name"),
 			request.getParameter("Description"),
 			request.getParameter("imgurl"),
 			Integer.parseInt(request.getParameter("price"))
 		));
-		getServletContext().setAttribute("entry", entry);
+		getServletContext().setAttribute("Homework2entry", Homework2entry);
 
 		PrintWriter out = response.getWriter();
 		out.println("Succefully Updated  </br>");

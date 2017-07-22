@@ -34,11 +34,11 @@ public class AddToCart extends HttpServlet {
 		
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		List<Addfood> entry = (List<Addfood>) getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry = (List<Addfood>) getServletContext().getAttribute("Homework2entry");
 
 		Addfood leentry = null;
 
-		for (Addfood foodentries : entry) {
+		for (Addfood foodentries : Homework2entry) {
 			if (foodentries.getId() == id) {
 				
 				leentry = foodentries;
@@ -48,14 +48,14 @@ public class AddToCart extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Addfood> Homework2cartentry = (List<Addfood>) getServletContext().getAttribute("Homework2cartentry");
 
-		cartentry.add(new Addfood(id, leentry.getName(), leentry.getDescription(), leentry.getImgurl(),
+		Homework2cartentry.add(new Addfood(id, leentry.getName(), leentry.getDescription(), leentry.getImgurl(),
 			leentry.getPrice()));
 		System.out.println(leentry.getName());
 
 
-		getServletContext().setAttribute("cartentry", cartentry);
+		getServletContext().setAttribute("Homework2cartentry", Homework2cartentry);
 		
 response.setContentType("text/html");
 		

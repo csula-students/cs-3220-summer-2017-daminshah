@@ -25,8 +25,8 @@ public class FoodMenuServlet extends HttpServlet {
 	
 	public void init() {
 		// init the application scope to have pre-set values
-		List<Addfood> entry = new ArrayList<>();
-		getServletContext().setAttribute("entry", entry);
+		List<Addfood> Homework2entry = new ArrayList<>();
+		getServletContext().setAttribute("Homework2entry", Homework2entry);
 	}
     public FoodMenuServlet() {
         super();
@@ -40,7 +40,7 @@ public class FoodMenuServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	//	response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out=response.getWriter();
-		List<Addfood> entry=(List<Addfood>) getServletContext().getAttribute("entry");
+		List<Addfood> Homework2entry=(List<Addfood>) getServletContext().getAttribute("Homework2entry");
 		response.setContentType("text/html");
 		out.println("<head>");
 		out.println("<style>body { " + "}</style>");
@@ -53,7 +53,7 @@ public class FoodMenuServlet extends HttpServlet {
 		out.println("<h2> Food Items List </h>");
 		out.println("<table border=1, padding=1px>");
 		
-		for (Addfood entries: entry) {
+		for (Addfood entries: Homework2entry) {
 			out.println(
 				"<tr>"+
 					"<th> Food Name </th> "+
