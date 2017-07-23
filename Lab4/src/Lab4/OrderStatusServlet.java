@@ -32,15 +32,15 @@ public class OrderStatusServlet extends HttpServlet {
 
 		//Sample
 
-		List<Order> sampleorders = new ArrayList<>();
+		List<Order> Lab4sampleorders = new ArrayList<>();
 		DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 
-		sampleorders.add(new Order(sampleorders.size(), "Burger", "Eric",
+		Lab4sampleorders.add(new Order(Lab4sampleorders.size(), "Burger", "Eric",
 				"IN_QUEUE", df.format(date)));
-		sampleorders.add(new Order(sampleorders.size(), "Pizza","Eric", "IN_QUEUE",df.format(date)));
-		sampleorders.add(new Order(sampleorders.size(), "Sandwiche","Eric", "IN_QUEUE", df.format(date)));
-		getServletContext().setAttribute("sampleorders", sampleorders);
+		Lab4sampleorders.add(new Order(Lab4sampleorders.size(), "Pizza","Eric", "IN_QUEUE",df.format(date)));
+		Lab4sampleorders.add(new Order(Lab4sampleorders.size(), "Sandwiche","Eric", "IN_QUEUE", df.format(date)));
+		getServletContext().setAttribute("Lab4sampleorders", Lab4sampleorders);
 	}
     public OrderStatusServlet() {
         super();

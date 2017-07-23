@@ -33,16 +33,16 @@ public class DeleteAdminServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		int id=Integer.parseInt(request.getParameter("Submit"));
-		List<AddFood> items=(List<AddFood>)getServletContext().getAttribute("items");
+		List<AddFood> Lab4items=(List<AddFood>)getServletContext().getAttribute("Lab4items");
 		
 		int index=-1;
-		for (int i = 0; i < items.size(); i ++) {
-			if (items.get(i).getId() == id) {
+		for (int i = 0; i < Lab4items.size(); i ++) {
+			if (Lab4items.get(i).getId() == id) {
 				index = i;
 			}
 		}
-		items.remove(index);
-		getServletContext().setAttribute("entries", items);
+		Lab4items.remove(index);
+		getServletContext().setAttribute("Lab4entries", Lab4items);
 		
 
 		//response.setContentType("text/html");
@@ -50,7 +50,7 @@ public class DeleteAdminServlet extends HttpServlet {
 		//out.println("Succesfully Deleted");
 		//out.println("<a href='FoodItemListAdminServlet'>Go back to List</a>");
 		
-		response.sendRedirect("http://localhost:8080/Lab4/admin/inventory.jsp");
+		response.sendRedirect("admin/inventory.jsp");
 
 	}
 

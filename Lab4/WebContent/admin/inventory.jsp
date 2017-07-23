@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
    
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-        <%@ taglib uri="adminHeader.tld" prefix= "cs3220"%>
-      
+       <%--  <%@ taglib uri="adminHeader.tld" prefix= "cs3220"%>
+       --%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -52,14 +52,14 @@
             </th>
         </thead>
         <tbody>
-        <c:forEach items = "${items}" var="item">
+        <c:forEach items = "${lab4items}" var="lab4item">
         	<tr>
-        	<td>${item.getName()}</td>	
-        	<td> <img src="${item.getUrl()}" width="100" height="100"> <br> </td>
-        	<td>${item.getDescription()}</td>
-        	<td>${item.getPrice()}</td>
+        	<td>${lab4item.getName()}</td>	
+        	<td> <img src="${lab4item.getUrl()}" width="100" height="100"> <br> </td>
+        	<td>${lab4item.getDescription()}</td>
+        	<td>${lab4item.getPrice()}</td>
         	
-        	<td><form action="DeleteAdminServlet" method="get"> <button class="button1" name="Submit" value="${item.getId()}">Delete</button></form></td>
+        	<td><form action="DeleteAdminServlet" method="get"> <button class="button1" name="Submit" value="${lab4item.getId()}">Delete</button></form></td>
         	</tr>
         	</c:forEach>
         </tbody>
@@ -69,7 +69,7 @@
         
     </table>
     
-     <a href="http://localhost:8080/Lab4/admin/create-food.jsp"><button class="button1">Add new Food</button></a>
+     <a href="create-food.jsp"><button class="button1">Add new Food</button></a>
 </main>
     
 

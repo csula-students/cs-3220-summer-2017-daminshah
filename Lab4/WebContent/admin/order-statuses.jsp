@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	
     pageEncoding="UTF-8"%>
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-      <%@ taglib uri="adminHeader.tld" prefix= "cs3220"%>
-    
+     <%--  <%@ taglib uri="adminHeader.tld" prefix= "cs3220"%>
+     --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,12 +41,12 @@
                     </tr>
                 </thead>
                 <tbody>
-            <c:forEach items = "${sampleorders}" var="sampleorders">
+            <c:forEach items = "${Lab4sampleorders}" var="Lab4sampleorders">
         	<tr>
         	
-        	<td>${sampleorders.getDate()}</td>
-        	<td>${sampleorders.getName()}</td>	
-        	<td>${sampleorders.getCustomername()}</td>
+        	<td>${Lab4sampleorders.getDate()}</td>
+        	<td>${Lab4sampleorders.getName()}</td>	
+        	<td>${Lab4sampleorders.getCustomername()}</td>
         	<td><form name="status" method="get" action="#">
 							<select>
 								<option>In_QUEUE</option>

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CreateFoodAdminServlet
  */
-@WebServlet("/CreateFoodAdminServlet")
+@WebServlet("/lab4CreateFoodAdminServlet")
 public class CreateFoodAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,8 +29,8 @@ public class CreateFoodAdminServlet extends HttpServlet {
     }
     
     public void init(){
-    	List<AddFood> items=new ArrayList<>();
-    	getServletContext().setAttribute("items", items);
+    	List<AddFood> Lab4items=new ArrayList<>();
+    	getServletContext().setAttribute("Lab4items", Lab4items);
     
     	
     }
@@ -41,7 +41,7 @@ public class CreateFoodAdminServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -50,13 +50,13 @@ public class CreateFoodAdminServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-			List<AddFood> items=(List<AddFood>) getServletContext().getAttribute("items");
+			List<AddFood> Lab4items=(List<AddFood>) getServletContext().getAttribute("Lab4items");
 		
 		
-		items.add(new AddFood(items.size(), request.getParameter("name"), request.getParameter("image"), request.getParameter("description"),Double.parseDouble((request.getParameter("price")))));
+			Lab4items.add(new AddFood(Lab4items.size(), request.getParameter("name"), request.getParameter("image"), request.getParameter("description"),Double.parseDouble((request.getParameter("price")))));
 		
 		
-		getServletContext().setAttribute("items", items);
+		getServletContext().setAttribute("lab4items", Lab4items);
 		
 		
 		request.getRequestDispatcher("/admin/inventory.jsp").forward(request, response);
