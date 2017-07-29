@@ -13,6 +13,9 @@ public class Order {
 	 String name;
 	 Statuses statuses;
 	 
+	 Date date;
+
+	 
 	   
 	  public Order(int id, Addfood food, String name, Statuses statuses, Date date) {
 			this.id = id;
@@ -64,8 +67,7 @@ public class Order {
 		this.date = date;
 	}
 
-	Date date;
-	 
+		 
 	  
 
 }

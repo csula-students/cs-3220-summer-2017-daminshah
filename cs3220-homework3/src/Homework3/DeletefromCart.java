@@ -1,7 +1,6 @@
 package Homework3;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,18 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
- * Servlet implementation class DeleteAdminServlet
+ * Servlet implementation class DeletefromCart
  */
-@WebServlet("/Delete")
-public class DeleteAdminServlet extends HttpServlet {
+@WebServlet("/DeletefromCart")
+public class DeletefromCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteAdminServlet() {
+    public DeletefromCart() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,26 +30,18 @@ public class DeleteAdminServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		int id=Integer.parseInt(request.getParameter("Submit"));
-		List<Addfood> Homework3items=(List<Addfood>)getServletContext().getAttribute("Homework3items");
+		int id=Integer.parseInt(request.getParameter("id"));
+		List<Addfood> Homework3cartentry=(List<Addfood>)getServletContext().getAttribute("Homework3cartentry");
 		
 		int index=-1;
-		for (int i = 0; i < Homework3items.size(); i ++) {
-			if (Homework3items.get(i).getId() == id) {
+		for (int i = 0; i < Homework3cartentry.size(); i ++) {
+			if (Homework3cartentry.get(i).getId() == id) {
 				index = i;
 			}
 		}
-		Homework3items.remove(index);
-		getServletContext().setAttribute("Homework3items", Homework3items);
-		
-
-		//response.setContentType("text/html");
-		//PrintWriter out = response.getWriter();
-		//out.println("Succesfully Deleted");
-		//out.println("<a href='FoodItemListAdminServlet'>Go back to List</a>");
-		
-		response.sendRedirect("admin/inventory.jsp");
-
+		Homework3cartentry.remove(index);
+		getServletContext().setAttribute("Homework3cartentry", Homework3cartentry);
+		response.sendRedirect("confirmorder.jsp");
 	}
 
 	/**

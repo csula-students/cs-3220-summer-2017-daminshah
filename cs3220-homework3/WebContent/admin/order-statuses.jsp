@@ -44,24 +44,24 @@
                 </thead>
                 <tbody>
             <tbody>
-       		<c:forEach items="${orderitems}"  var="orderitems">
+       		<c:forEach items="${Homework3orderitems}"  var="Homework3orderitems">
        		<tr>
-       		<td>${orderitems.getDate()}</td>
-       		<td>${orderitems.getFood().getName()}</td>
-       		<td>${orderitems.getName()}</td>
-       		<td>${orderitems.getStatuses().toString()}</td>
-       		 <td><form method="get" action="OrderStatusServlet">
+       		<td>${Homework3orderitems.getDate()}</td>
+       		<td>${Homework3orderitems.getFood().getName()}</td>
+       		<td>${Homework3orderitems.getName()}</td>
+       		<td>${Homework3orderitems.getStatuses().toString()}</td>
+       		 <td><form method="get" action="../OrderStatusServlet">
 							<select id="status" name="status">
-								<option value="IN_QUEUE">${orderitems.statuses.IN_QUEUE}</option>
-								<option value="IN_PROGRESS">${orderitems.statuses.IN_PROGRESS}</option>
-								<option value="COMPLETED">${orderitems.statuses.COMPLETED}</option>
+								<option value="IN_QUEUE">${statuses.IN_QUEUE}</option>
+								<option value="IN_PROGRESS">${statuses.IN_PROGRESS}</option>
+								<option value="COMPLETED">${statuses.COMPLETED}</option>
 
 							</select>
 							
 						</form></td>
 						
      		
-          	<td><a href="http://localhost:8080/cs3220-homework3/OrderStatusServlet?id=${orderitems.getId()}">Edit</a></td>	
+          	<td><a href="OrderStatusServlet?id=${Homework3orderitems.getId()}">Edit</a></td>	
        		</tr>
        		</c:forEach>
        	                </tbody>

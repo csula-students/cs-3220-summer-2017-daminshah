@@ -36,7 +36,7 @@
     <main>
         <h2>Create a new Item</h2>
 
-        <form action="../CreateFoodAdminServlet" method="post">
+        <form action="../create" method="post">
             <fieldset>
                 <legend>
                     <h2>Food Information</h2>

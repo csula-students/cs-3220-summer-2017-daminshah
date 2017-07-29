@@ -48,16 +48,18 @@ public class OrderStatusServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
+		List<Order> Homework3orderitems = (List<Order>) getServletContext().getAttribute("Homework3orderitems");
 		Order leEntry = null;
 		int index = -1;
-		for (int i = 0; i < orderitems.size(); i++) {
-			if (orderitems.get(i).getId() == id) {
-				leEntry = orderitems.get(i);
+		for (int i = 0; i < Homework3orderitems.size(); i++) {
+			if (Homework3orderitems.get(i).getId() == id) {
+				leEntry = Homework3orderitems.get(i);
 				index = i;
 			}
 			
 		}
+		
+		
 		
 		String status = request.getParameter("status");
 		System.out.println(status);
@@ -65,8 +67,8 @@ public class OrderStatusServlet extends HttpServlet {
 
 		System.out.println(status);
 
-		orderitems.set(index, new Order(leEntry.getId(), leEntry.getFood(), leEntry.getName(), status2,leEntry.getDate()));
-		getServletContext().setAttribute("orderitems", orderitems);
+		Homework3orderitems.set(index, new Order(leEntry.getId(), leEntry.getFood(), leEntry.getName(), status2,leEntry.getDate()));
+		getServletContext().setAttribute("Homework3orderitems", Homework3orderitems);
 		
 		request.getRequestDispatcher("/admin/order-statuses.jsp").forward(request, response);
 

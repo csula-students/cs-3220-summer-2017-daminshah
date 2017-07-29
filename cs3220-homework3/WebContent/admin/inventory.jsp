@@ -52,14 +52,14 @@
             </th>
         </thead>
         <tbody>
-        <c:forEach items = "${items}" var="item">
+        <c:forEach items = "${Homework3items}" var="Homework3item">
         	<tr>
-        	<td>${item.getName()}</td>	
-        	<td> <img src="${item.getUrl()}" width="100" height="100"> <br> </td>
-        	<td>${item.getDescription()}</td>
-        	<td>${item.getPrice()}</td>
+        	<td>${Homework3item.getName()}</td>	
+        	<td> <img src="${Homework3item.getUrl()}" width="100" height="100"> <br> </td>
+        	<td>${Homework3item.getDescription()}</td>
+        	<td>${Homework3item.getPrice()}</td>
         	
-        	<td><form action="DeleteAdminServlet" method="get"> <button class="button1" name="Submit" value="${item.getId()}">Delete</button></form></td>
+        	<td><form action="Delete" method="get"> <button class="button1" name="Submit" value="${Homework3item.getId()}">Delete</button></form></td>
         	</tr>
         	</c:forEach>
         </tbody>
@@ -69,8 +69,8 @@
         
     </table>
     
-     <a href="http://localhost:8080/cs3220-homework3/admin/create-food.jsp"><button class="button1">Add new Food</button></a>
-     <a href="http://localhost:8080/cs3220-homework3/menu.jsp"><button class="button1">Go To Main Menu</button></a>
+     <a href="admin/create-food.jsp"><button class="button1">Add new Food</button></a>
+     <a href="${pageContext.request.contextPath}/menu.jsp"><button class="button1">Go To Main Menu</button></a>
      
      
 </main>

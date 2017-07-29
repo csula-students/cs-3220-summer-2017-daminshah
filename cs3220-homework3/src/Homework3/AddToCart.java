@@ -30,8 +30,8 @@ public class AddToCart extends HttpServlet {
     }
 
     public void init(){
-    	List<Addfood> cartentry=new ArrayList<>();
-    	getServletContext().setAttribute("cartentry", cartentry);
+    	List<Addfood> Homework3cartentry=new ArrayList<>();
+    	getServletContext().setAttribute("Homework3cartentry", Homework3cartentry);
     
     	
     }
@@ -42,27 +42,27 @@ public class AddToCart extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		int id = Integer.parseInt(request.getParameter("Submit"));
-		List<Addfood> items = (List<Addfood>) getServletContext().getAttribute("items");
+		List<Addfood> Homework3items = (List<Addfood>) getServletContext().getAttribute("Homework3items");
 
 		Addfood leentry = null;
 
-		for (Addfood foodentries : items) {
+		for (Addfood foodentries : Homework3items) {
 			if (foodentries.getId() == id) {
 				
 				leentry = foodentries;
 			}
 		}
 		
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Addfood> Homework3cartentry = (List<Addfood>) getServletContext().getAttribute("Homework3cartentry");
 
-		cartentry.add(new Addfood(id, leentry.getName(), leentry.getUrl(), leentry.getDescription(),
+		Homework3cartentry.add(new Addfood(id, leentry.getName(), leentry.getUrl(), leentry.getDescription(),
 			leentry.getPrice()));
 		System.out.println(leentry.getName());
 
 
-		getServletContext().setAttribute("cartentry", cartentry);
+		getServletContext().setAttribute("Homework3cartentry", Homework3cartentry);
 		
-		response.sendRedirect("http://localhost:8080/cs3220-homework3/ShoppingCart.jsp");
+		response.sendRedirect("ShoppingCart.jsp");
 		
 
 	}

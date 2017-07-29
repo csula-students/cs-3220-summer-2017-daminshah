@@ -31,15 +31,15 @@
     <main>
         <div class="container ">
             <h3>Shopping Cart</h3>
-             <c:forEach items = "${cartentry}" var="cartentry">
+             <c:forEach items = "${Homework3cartentry}" var="Homework3cartentry">
       
             
-            <h2>You put ${cartentry.getName()} in the cart </h2>
+            <h2>You put ${Homework3cartentry.getName()} in the cart </h2>
             
             </c:forEach>
                        
-            <a href="http://localhost:8080/cs3220-homework3/menu.jsp"> <button class="button1" >Go to Main Menu</button>  </a>
-           <a href="http://localhost:8080/cs3220-homework3/confirmorder.jsp">  <button class="button1">Checkout</button>   </a>     
+            <a href="${pageContext.request.contextPath}/menu.jsp"> <button class="button1" >Go to Main Menu</button>  </a>
+           <a href="${pageContext.request.contextPath}/confirmorder.jsp">  <button class="button1">Checkout</button>   </a>     
                        
     </main>
     

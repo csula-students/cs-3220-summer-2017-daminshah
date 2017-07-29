@@ -17,12 +17,12 @@
 </head>
 
 <header class="clearfix">
-    <nav>
+    <!-- <nav>
        
         <a href="create-food.jsp">Create food</a>
         <a href="inventory.jsp">Inventory</a>
          <a href="order-statuses.jsp">Order Status</a>
-    </nav>
+    </nav> -->
     
       <cs3220:AdminHeader/>
     
@@ -52,14 +52,14 @@
             </th>
         </thead>
         <tbody>
-        <c:forEach items = "${items}" var="item">
+        <c:forEach items = "${Homework3items}" var="Homework3item">
         	<tr>
-        	<td>${item.getName()}</td>	
-        	<td> <img src="${item.getUrl()}" width="100" height="100"> <br> </td>
-        	<td>${item.getDescription()}</td>
-        	<td>${item.getPrice()}</td>
+        	<td>${Homework3item.getName()}</td>	
+        	<td> <img src="${Homework3item.getUrl()}" width="100" height="100"> <br> </td>
+        	<td>${Homework3item.getDescription()}</td>
+        	<td>${Homework3item.getPrice()}</td>
         	
-        	<td><form action="http://localhost:8080/cs3220-homework3/AddToCart" method="get"> <button class="button1" name="Submit" value="${item.getId()}">Add To Cart</button></form></td>
+        	<td><form action="AddToCart" method="get"> <button class="button1" name="Submit" value="${Homework3item.getId()}">Add To Cart</button></form></td>
         	</tr>
         	</c:forEach>
         </tbody>

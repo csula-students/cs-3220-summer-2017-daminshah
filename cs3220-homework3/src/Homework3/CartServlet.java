@@ -43,25 +43,25 @@ public class CartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 	//	List<Order> orderitems = (List<Order>) getServletContext().getAttribute("orderitems");
-		List<Addfood> cartentry = (List<Addfood>) getServletContext().getAttribute("cartentry");
+		List<Addfood> Homework3cartentry = (List<Addfood>) getServletContext().getAttribute("Homework3cartentry");
 
 		
-		List<Order> orderitems=new ArrayList<>();
+		List<Order> Homework3orderitems=new ArrayList<>();
 	
-		for (Addfood entry : cartentry) {
+		for (Addfood entry : Homework3cartentry) {
 
 			
-			orderitems.add(new Order(orderitems.size(), entry, request.getParameter("name"), Order.Statuses.IN_QUEUE , new Date()));
-			getServletContext().setAttribute("orderitems", orderitems);
+			Homework3orderitems.add(new Order(Homework3orderitems.size(), entry, request.getParameter("name"), Order.Statuses.IN_QUEUE , new Date()));
+			getServletContext().setAttribute("Homework3orderitems", Homework3orderitems);
 			
 			System.out.println(request.getParameter("name"));
 			System.out.println("CARTSERVLET--------------"+entry.getName());
 		}
 
-		cartentry.clear();
+		Homework3cartentry.clear();
 		
 		
-	response.sendRedirect("http://localhost:8080/cs3220-homework3/orderpage.jsp");	
+	response.sendRedirect("orderpage.jsp");	
 		
 	}
 

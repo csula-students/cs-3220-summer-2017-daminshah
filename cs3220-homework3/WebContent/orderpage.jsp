@@ -38,7 +38,7 @@
     </h2>
     
     <h2>
-    Click <a href="orderstatus.jsp">here</a>  to go to the orders Page
+    Click <a href="${pageContext.request.contextPath}/orderstatus.jsp">here</a>  to go to the orders Page
     </h2>
         
   

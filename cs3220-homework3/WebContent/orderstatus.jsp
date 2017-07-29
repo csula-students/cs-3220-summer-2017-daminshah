@@ -31,15 +31,7 @@
     <main>
         <div class="container ">
             <h2>Your Order</h2>
-            <%--  <c:forEach items = "${cartentry}" var="cartentry">
-      
-            
-            <h2>You put ${cartentry.getName()} in the cart </h2>
-            
-            
-            </c:forEach>
-       --%>       
-       
+     
        
        		<table border=2>
        		<tr>
@@ -52,12 +44,12 @@
        			</thead>
        		</tr>
        		<tbody>
-       		<c:forEach items="${orderitems}"  var="orderitems">
+       		<c:forEach items="${Homework3orderitems}"  var="Homework3orderitems">
        		<tr>
-       		<td>${orderitems.getFood().getName()}</td>
-       		<td><img src="${orderitems.getFood().getUrl()}" width="70px"/></td>
-       		<td>${orderitems.getStatuses().toString()}</td>
-       		<td>${orderitems.getDate()}</td>
+       		<td>${Homework3orderitems.getFood().getName()}</td>
+       		<td><img src="${Homework3orderitems.getFood().getUrl()}" width="70px"/></td>
+       		<td>${Homework3orderitems.getStatuses().toString()}</td>
+       		<td>${Homework3orderitems.getDate()}</td>
        		</tr>
        		</c:forEach>
        		</tbody>

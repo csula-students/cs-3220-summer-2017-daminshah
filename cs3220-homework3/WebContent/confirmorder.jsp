@@ -51,13 +51,13 @@
        			</thead>
        		</tr>
        		<tbody>
-       		<c:forEach items="${cartentry}"  var="cartentry">
+       		<c:forEach items="${Homework3cartentry}"  var="Homework3cartentry">
        		<tr>
-       		<td>${cartentry.getName()}</td>
-       		<td>${cartentry.getDescription()}</td>
-       		<td><img src="${cartentry.getUrl()}" width="70px"/></td>
-       		<td>${cartentry.getPrice()}</td>
-       		<td><a href='shopping-cart/delete?id=${cartentry.getId()}'>Remove</a> </td>
+       		<td>${Homework3cartentry.getName()}</td>
+       		<td>${Homework3cartentry.getDescription()}</td>
+       		<td><img src="${Homework3cartentry.getUrl()}" width="70px"/></td>
+       		<td>${Homework3cartentry.getPrice()}</td>
+       		<td><a href='DeletefromCart?id=${Homework3cartentry.getId()}'>Remove</a> </td>
        		</tr>
        		</c:forEach>
        		</tbody>
