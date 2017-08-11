@@ -48,7 +48,7 @@ public class FoodItemDAO implements DAOResource<FoodItem> {
                                                     rs.getString("description"),
                                                     rs.getString("imgURL"),
                                                      rs.getDouble("price"));
-                lab7items = Optional.of(foodToEdit);
+                lab7items = Optional.of(edifood);
             }
 
         } catch (SQLException e) {
