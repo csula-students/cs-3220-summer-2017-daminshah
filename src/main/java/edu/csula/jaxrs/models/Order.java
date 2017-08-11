@@ -15,7 +15,9 @@ public class Order {
 	}
 
 	public Order () {
-		
+		this.id=0;
+        this.customerName="";
+        this.status="";
 	}
 
 	public Order (int id, String customerName, String status) {

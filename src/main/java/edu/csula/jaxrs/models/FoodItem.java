@@ -7,6 +7,14 @@ public class FoodItem {
 	public final String imgURL;
 	public final double price;
 	
+
+	public FoodItem(){
+		this.id=0;
+		this.name="";
+		this.description="";
+		this.imgURL="";
+		this.price=0;
+	}
 	public FoodItem (int id, String name, String description, String imgURL, double price) {
 		this.id = id;
 		this.name = name;
