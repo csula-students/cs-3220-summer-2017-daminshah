@@ -15,49 +15,47 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.csula.jaxrs.models.User;
-import edu.csula.jaxrs.models.FoodItem;
+import edu.csula.jaxrs.models.Order;
+import edu.csula.jaxrs.OrderDAO;
+
 @Path("")
 @Singleton 
-public class FoodResource {
+public class OrderResource {
+    private OrderDAO dao = new OrderDAO();
    
-    private FoodItemDAO dao = new FoodItemDAO();
-
-    
-
+  
 
     @GET
-    @Path("fooditems")
+    @Path("orders")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<FoodItem> getMenu() {
+    public List<Order> getOrders() {
         return dao.list();
     }
 
     @GET
-    @Path("fooditem/{id}")
+    @Path("order/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public FoodItem getFoodItemById(@PathParam("id") int id) {
+    public Order getOrderById(@PathParam("id") int id) {
         return dao.get(id).get();
     }
 
     @POST
-    @Path("fooditems")
+    @Path("orders")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean addFoodItem(FoodItem foodItem) {
-        dao.add(foodItem);
-        System.out.println(dao.list());
+  
+   public boolean addOrder(Order order) {
+        dao.add(order);
         return true;
     }
 
     @PUT
-    @Path("fooditem/{id}")
+    @Path("order/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean updateFoodItem(FoodItem foodItem, @PathParam("id") int id) {
-        if (id == foodItem.getId()) {
-            dao.update(foodItem);
-            System.out.println(dao.list());
+    public boolean updateOrder(Order order, @PathParam("id") int id) {
+        if (id == order.getId()) {
+            dao.update(order);
             return true;
         } else {
             return false;
@@ -65,11 +63,10 @@ public class FoodResource {
     }
 
     @DELETE
-    @Path("fooditem/{id}")
+    @Path("order/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean deleteFoodItem(@PathParam("id") int id) {
+    public boolean deleteOrder(@PathParam("id") int id) {
         dao.delete(id);
-        System.out.println(dao.list());
         return true;
     }
 }

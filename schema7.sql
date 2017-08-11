@@ -13,15 +13,7 @@ CREATE TABLE menu (
 CREATE TABLE orders (
 	order_id INTEGER AUTO_INCREMENT PRIMARY KEY,
 	customer_name VARCHAR(255) NOT NULL,
-	status VARCHAR(255) NOT NULL,
-	order_time TIMESTAMP NOT NULL
-);
-
-
-CREATE TABLE order_foods (
-	order_foods_id INTEGER NOT NULL REFERENCES orders(orders_id),
-	menu_id INTEGER NOT NULL REFERENCES menu(id)
-	
+	status VARCHAR(255) NOT NULL
 );
 
 
@@ -31,12 +23,8 @@ INSERT INTO menu (id, name, description, imgURL, price) VALUES
 (3, "Cheese Burger", "Mouth-Watering", "images/burger1.png", 5.99);
 
 
-INSERT INTO orders (order_id, customer_name, status, order_time) VALUES
-(1, "Eric", "IN PROGRESS", NOW()),
-(2, "Damin", "IN QUEUE", NOW());
+INSERT INTO orders (order_id, customer_name, status) VALUES
+(1, "Eric", "IN PROGRESS"),
+(2, "Damin", "IN QUEUE");
 
 
-INSERT INTO order_foods (order_foods_id, menu_id) VALUES 
-(1, 2),
-(1, 3),
-(2, 2);
