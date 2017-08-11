@@ -24,7 +24,7 @@ public class FoodItemDAO implements DAOResource<FoodItem> {
                     rs.getString("name"),
                     rs.getString("description"),
                     rs.getString("imgURL"),
-                    (double) rs.getFloat("price")
+                 rs.getDouble("price")
                 ));
             }
         } catch (SQLException e) {
@@ -35,7 +35,7 @@ public class FoodItemDAO implements DAOResource<FoodItem> {
     }
 
     public Optional<FoodItem> get(int id) {
-        Optional<FoodItem> toReturn = Optional.empty();
+        Optional<FoodItem> lab7items = Optional.empty();
         DatabaseResource db = new DatabaseResource();
         try (Connection c = db.connection()) {
             PreparedStatement pstmt = c.prepareStatement("SELECT * FROM menu WHERE menu.id = ? ");
@@ -43,29 +43,29 @@ public class FoodItemDAO implements DAOResource<FoodItem> {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                FoodItem foodToEdit = new FoodItem(rs.getInt("id"),
+                FoodItem edifood = new FoodItem(rs.getInt("id"),
                                                     rs.getString("name"),
                                                     rs.getString("description"),
                                                     rs.getString("imgURL"),
-                                                    (double) rs.getFloat("price"));
-                toReturn = Optional.of(foodToEdit);
+                                                     rs.getDouble("price"));
+                lab7items = Optional.of(foodToEdit);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return toReturn;
+        return lab7items;
     }
 
-    public void add(FoodItem entry) {
+    public void add(FoodItem obj) {
         DatabaseResource db = new DatabaseResource();
         try (Connection c = db.connection()) {
             PreparedStatement pstmt = c.prepareStatement("INSERT INTO menu (id, name, description, imgURL, price) VALUES (?, ?, ?, ?, ?)");
-            pstmt.setInt(1, entry.getId());
-            pstmt.setString(2, entry.getName());
-            pstmt.setString(3, entry.getDescription());
-            pstmt.setString(4, entry.getImgURL());
-            pstmt.setFloat(5, (float) entry.getPrice());
+            pstmt.setInt(1, obj.getId());
+            pstmt.setString(2, obj.getName());
+            pstmt.setString(3, obj.getDescription());
+            pstmt.setString(4, obj.getImgURL());
+            pstmt.setDouble(5,  obj.getPrice());
            
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -73,16 +73,16 @@ public class FoodItemDAO implements DAOResource<FoodItem> {
         }
     }
 
-    public void update(FoodItem entry) {
+    public void update(FoodItem obj) {
         DatabaseResource db = new DatabaseResource();
         try (Connection c = db.connection()) {
             PreparedStatement pstmt = c.prepareStatement("UPDATE menu SET id = ?, name = ?, description = ?, imgURL = ?, price = ? WHERE id = ?");
-            pstmt.setInt(1, entry.getId());
-            pstmt.setString(2, entry.getName());
-            pstmt.setString(3, entry.getDescription());
-            pstmt.setString(4, entry.getImgURL());
-            pstmt.setFloat(5, (float) entry.getPrice());
-            pstmt.setInt(6, entry.getId());
+            pstmt.setInt(1, obj.getId());
+            pstmt.setString(2, obj.getName());
+            pstmt.setString(3, obj.getDescription());
+            pstmt.setString(4, obj.getImgURL());
+            pstmt.setDouble(5,  obj.getPrice());
+            pstmt.setInt(6, obj.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -2,13 +2,6 @@ package edu.csula.jaxrs;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * DAO (Data Access Object) is common abstraction layer between business model
- * to database
- *
- * Commoon operations in this layer is to parse result set into business model
- * and vice versa
- */
 public interface DAOResource<T> {
     // List a list of objects
     public List<T> list();
